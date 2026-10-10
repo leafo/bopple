@@ -1,0 +1,139 @@
+.game {
+  --board: min(calc(100vw - 32px), calc(100dvh - 300px), 460px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  height: 100dvh;
+  padding: max(12px, env(safe-area-inset-top)) 16px max(12px, env(safe-area-inset-bottom));
+  overflow: hidden;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: var(--board);
+}
+
+.clock {
+  font-size: 34px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.clock.low {
+  color: var(--bad);
+}
+
+.stats {
+  flex: 1;
+  display: flex;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.stats b {
+  color: var(--ink);
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.end {
+  composes: ghost from "./buttons.module.css";
+}
+
+.timebar {
+  width: var(--board);
+  height: 4px;
+  border-radius: 2px;
+  background: var(--tray);
+  overflow: hidden;
+}
+
+.timebar > div {
+  height: 100%;
+  background: var(--accent);
+  transition: width 100ms linear;
+}
+
+.timebar > div.low {
+  background: var(--bad);
+}
+
+.display {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--board);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.current {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.result {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.result small {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-left: 6px;
+  opacity: 0.85;
+}
+
+.good {
+  color: var(--good);
+}
+
+.bad {
+  color: var(--bad);
+}
+
+.dup {
+  color: var(--dup);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.found {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0 0;
+  width: var(--board);
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 6px;
+}
+
+.found li {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--chip);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.found li.fresh {
+  background: var(--good);
+  color: #fff;
+}

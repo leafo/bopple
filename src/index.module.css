@@ -1,0 +1,39 @@
+:global(:root) {
+  --bg: #161a22;
+  --panel: #1f2430;
+  --chip: #2c3342;
+  --line: #3a4255;
+  --ink: #eef0f4;
+  --muted: #8b93a7;
+  --tray: #0e1117;
+  --die: #f4ecd8;
+  --die-ink: #1d2433;
+  --accent: #ffb547;
+  --accent-ink: #2a1a00;
+  --good: #2fae6b;
+  --good-soft: #1f4a36;
+  --bad: #e5534b;
+  --dup: #5b7bd6;
+  color-scheme: dark;
+}
+
+:global(*),
+:global(*::before),
+:global(*::after) {
+  box-sizing: border-box;
+}
+
+:global(html),
+:global(body) {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
+}
+
+.app {
+  min-height: 100dvh;
+}

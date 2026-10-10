@@ -1,0 +1,19 @@
+{
+  "name": "boggle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/index.jsx --bundle --outdir=dist --jsx=automatic --minify",
+    "start": "esbuild src/index.jsx --bundle --outdir=dist --jsx=automatic --servedir=dist --watch"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

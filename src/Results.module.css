@@ -1,0 +1,168 @@
+.results {
+  --board: min(calc(100vw - 32px), 260px, 40dvh);
+  max-width: 520px;
+  margin: 0 auto;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(32px, env(safe-area-inset-bottom));
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.big {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 4px;
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.big b {
+  font-size: 30px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.big span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.callout {
+  text-align: center;
+  color: var(--muted);
+  margin: 16px 0 12px;
+}
+
+.callout button {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.boardWrap {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  background: var(--bg);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.primary {
+  composes: primary from "./buttons.module.css";
+  flex: 1;
+}
+
+.ghost {
+  composes: ghost from "./buttons.module.css";
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--panel);
+  margin-bottom: 8px;
+}
+
+.tabs button {
+  flex: 1;
+  appearance: none;
+  border: 0;
+  border-radius: 9px;
+  padding: 9px 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.tabs button span {
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.tabs .activeTab {
+  background: var(--chip);
+  color: var(--ink);
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+}
+
+.group h3 {
+  display: flex;
+  justify-content: space-between;
+  margin: 18px 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.group h3 span {
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.group button {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wasFound {
+  background: var(--good-soft);
+  color: var(--ink);
+}
+
+.wasMissed {
+  background: var(--chip);
+  color: var(--ink);
+}
+
+.group .selectedWord {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
